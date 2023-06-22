@@ -1,12 +1,20 @@
-function Function(props){
-let searchWord='War';
-let gameList=props.gameList;
-const searchResult=gameList.filter((game)=>{
-    return game.hasOwnProperty('title')&&game.title.toLowerCase().includes(searchWord.toLowerCase());
+function Function(props) {
+  let searchWord = "War";
+  let gameList = props.gameList;
+  let searchGenre='Shooter'
+  const searchNameResult = gameList.filter((game) => {
+    return (
+      game.hasOwnProperty("title") &&
+      game.title.toLowerCase().includes(searchWord.toLowerCase())
+    );
+  });
+const searchGenreResult=gameList.filter((game)=>{
+
+  return (game.hasOwnProperty('genre')&&game.genre.toLowerCase().includes(searchGenre.toLowerCase()))  
 })
+console.log(searchGenreResult);
 
-return<></>
-
+  return <></>;
 }
 
-export default Function
+export default Function;
