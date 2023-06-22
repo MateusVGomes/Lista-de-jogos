@@ -1,62 +1,61 @@
-*{
-    padding:0;
-    margin:0;
-
+* {
+  padding: 0;
+  margin: 0;
 }
-.gameCard{
-    display:grid;
-  
+.gamesBox{
+    display: grid;
+    align-items: center;
     justify-content: center;
     justify-items: center;
 }
+.gameCard {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+}
+.gameCard img{
+    width: 80%;
+    height:90%;
+    border-radius: 1000px;
+}
 @media screen and (min-width: 1024px) {
-    .gamesBox{
-        display:grid;
-        grid-template-columns:21% 21% 21% ;
-        grid-gap: 110px;
-        
-        align-items: center;
-        justify-content: center;
-        justify-items: center;
-    }
-    .gameCard{
-        border:10px solid black;
-        height: 380px;
-        width: 300px;
-        }
+  .gamesBox {
+    display: grid;
+    grid-template-columns: 21% 21% 21%;
+    grid-gap: 110px;
   }
+  .gameCard {
+    border: 10px solid black;
+    height: 380px;
+    width: 300px;
+  }
+}
 
 /*Tablet */
-  @media screen and (min-width: 768px) and (max-width: 1023px) {
-    .gamesBox{
-        display:grid;
-        grid-template-columns:45%45%;
-        grid-gap: 100px;
-        align-items: center;
-        justify-content: center;
-        justify-items: center;
-                grid-gap: 10px;
-        margin-top: 10px;
-    }
-    .gameCard{
-        border:10px solid black;
-        height: 326px;
-        width: 326px;
-        }
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .gamesBox {
+    grid-template-columns: 45%45%;
+    grid-gap: 100px;
+    grid-gap: 10px;
+    margin-top: 10px;
   }
-  @media screen and (max-width: 767px) {
-    .gamesBox{
-        display:grid;
-        grid-template-rows:16% ;
-        grid-gap: 10px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        align-items: center;
-        justify-content: center;
-        justify-items: center;
-    }
-    .gameCard{
-    border:10px solid black;
+  .gameCard {
+    border: 10px solid black;
+    height: 326px;
+    width: 326px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .gamesBox {
+    grid-template-rows: 16%;
+    grid-gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+  }
+  .gameCard {
+    border: 10px solid black;
     height: 220px;
     width: 220px;
-    }  }
+  }
+}
