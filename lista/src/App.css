@@ -12,6 +12,7 @@
   display: grid;
   justify-content: center;
   justify-items: center;
+  border: 1px solid black;
 }
 .gameCard img{
     width: 80%;
@@ -25,7 +26,7 @@
     grid-gap: 110px;
   }
   .gameCard {
-    border: 10px solid black;
+   
     height: 380px;
     width: 300px;
   }
@@ -40,7 +41,6 @@
     margin-top: 10px;
   }
   .gameCard {
-    border: 10px solid black;
     height: 326px;
     width: 326px;
   }
@@ -54,7 +54,6 @@
 
   }
   .gameCard {
-    border: 10px solid black;
     height: 220px;
     width: 220px;
   }
