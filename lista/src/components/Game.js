@@ -11,7 +11,7 @@ function Game(props) {
         <div className="subtitle">{props.firstGame.platform}</div>
         <div className="date">{props.firstGame["release_date"]}</div>
         <div class="tags">
-          <div class="tag">War</div>
+          <div class="tag">{props.firstGame.genre}</div>
         </div>
       </div>
     </div>
