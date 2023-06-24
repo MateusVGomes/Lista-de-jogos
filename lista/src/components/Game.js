@@ -5,7 +5,15 @@ function Game(props) {
         src={props.firstGame.thumbnail}
         alt={"Imagem do jogo:" + props.firstGame.title}
       />
-      <p>{props.firstGame.title}</p>
+      <div className="content">
+        <div className="title">{props.firstGame.title}</div>
+        <div className="subtitle">{props.firstGame["short_description"]}</div>
+        <div className="subtitle">{props.firstGame.platform}</div>
+        <div className="date">{props.firstGame["release_date"]}</div>
+        <div class="tags">
+          <div class="tag">War</div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -2,22 +2,88 @@
   padding: 0;
   margin: 0;
 }
-.gamesBox{
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    justify-items: center;
+body{
+  background-color:#F0F7EE;
+color:gray;
+}
+
+.content {
+  width: 288px;
+  height: 192px;
+  padding: 16px;
+ 
+  border-radius: 12px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
+  display: inline-flex;
+}
+.title {
+  align-self: stretch;
+  color: white;
+  font-size: 32px;
+  font-family: 'Roboto';
+  font-weight: 900;
+  word-wrap: break-word;
+}
+.subtitle {
+  align-self: stretch;
+  color: #A3A3F5;
+  font-size: 16px;
+  font-family: 'Roboto';
+  font-weight: 500;
+  word-wrap: break-word;
+}
+.date {
+  align-self: stretch;
+  color: white;
+  font-size: 12px;
+  font-family: 'Roboto';
+  font-weight: 700;
+  word-wrap: break-word;
+}
+.tags {
+  align-self: stretch;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
+  display: inline-flex;
+}
+.tag {
+  padding: 4px;
+  background: #4747EB;
+  border-radius: 8px;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  color: #05052E;
+  font-size: 16px;
+  font-family: 'Roboto';
+  font-weight: 500;
+  word-wrap: break-word;
+}
+.gamesBox {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
 }
 .gameCard {
   display: grid;
   justify-content: center;
   justify-items: center;
-  border: 1px solid black;
+  background: #05052e;
+  box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 24px;
 }
-.gameCard img{
-    width: 80%;
-    height:90%;
-    border-radius: 1000px;
+.gameCard img {
+  width: 300px;
+  height: 192px;
+  box-shadow: 0px -8px 8px rgba(0, 0, 0, 0.25) inset;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
 }
 @media screen and (min-width: 1024px) {
   .gamesBox {
@@ -26,11 +92,18 @@
     grid-gap: 110px;
   }
   .gameCard {
-   
-    height: 380px;
     width: 300px;
+    height: 380px;
+    
+  }
+
+  .gameCard img {
+    width: 300px;
+    height: 150px;
+    
   }
 }
+
 
 /*Tablet */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -41,8 +114,14 @@
     margin-top: 10px;
   }
   .gameCard {
-    height: 326px;
-    width: 326px;
+    width: 288px;
+    height: 384px;
+  }
+
+  .gameCard img {
+    width: 300px;
+    height: 150px;
+    
   }
 }
 @media screen and (max-width: 767px) {
@@ -51,10 +130,15 @@
     grid-gap: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
-
   }
   .gameCard {
     height: 220px;
     width: 220px;
   }
+  .gameCard img {
+    width: 220px;
+    height: 110px;
+    
+  }
+
 }
