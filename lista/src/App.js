@@ -65,6 +65,10 @@ function App() {
       isMounted = false;
     };
   }, []);
+       const updateGameList=(newGameList)=>{
+           setGameList(newGameList);
+       }
+
 
   return (
     <div className="App">
@@ -72,7 +76,7 @@ function App() {
         <p>{error}</p>
       ) : (
         
-        <div>  <Pesquisa gameList={gameList} />
+        <div>  <Pesquisa gameList={gameList} updateGameList={updateGameList} />
         <div className='gamesBox'>
           {gameList.map(game=>{
                 return <Game firstGame={game} />

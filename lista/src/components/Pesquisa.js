@@ -30,7 +30,8 @@ else{
         );
       });
 }
-console.log(searchGameResult);  
+console.log(searchGameResult)
+props.updateGameList(searchGameResult);  
 };
   return (
     <form onSubmit={handleSubmit}>
