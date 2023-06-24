@@ -71,11 +71,15 @@ function App() {
       {error ? (
         <p>{error}</p>
       ) : (
-        <>
-          <Pesquisa gameList={gameList} />
-          <Game firstGame={firstGame} />
-          
-        </>
+        
+        <div>  <Pesquisa gameList={gameList} />
+        <div className='gamesBox'>
+          {gameList.map(game=>{
+                return <Game firstGame={game} />
+          })}
+    
+        </div>
+        </div>
       )}
     </div>
   );
