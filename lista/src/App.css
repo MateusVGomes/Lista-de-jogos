@@ -5,6 +5,7 @@
 }
 
 body {
+  font-family: "Roboto", sans-serif;
   background-color: #121223;
   color: white;
   overflow-x: hidden;
@@ -17,252 +18,100 @@ body {
   width: 100vw;
   height: 100vh;
 }
-.loader{
-  display: flex;
+
+
+
+
+
+
+.search-type {
   align-items: center;
-  justify-content: center;
-  justify-items: center;
-  width: 100vw;
-  height: 100vh;
-  background-color: #05052e;
+  display: flex;
+  padding: 0 16px;
 }
 
-.content {
-  width: 100%;
-  max-width: 288px;
-  height: 192px;
-  padding: 16px;
+.search-type .group {
+  align-items: center;
+  display: flex;
+}
+
+.search-type .frame {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.search-type .t-tulo {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.search-type .rectangle {
+  width: 2px;
+  height: 14px;
+  background-color: #9747ff;
+}
+
+.search-type .switch-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.search-type .switch {
+  width: 40px;
+  height: 24px;
+  background-color: #3b00b2;
   border-radius: 12px;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
-.title {
-  align-self: stretch;
-  color: white;
-  font-size: 24px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 900;
-  word-wrap: break-word;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.search-type .div {
+  width: 14px;
+  height: 6px;
+  background-color: #9747ff;
+  border-radius: 3px;
 }
 
-.subtitle {
-  align-self: stretch;
-  color: #a3a3f5;
-  font-size: 14px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  word-wrap: break-word;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.date {
-  align-self: stretch;
-  color: white;
-  font-size: 12px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 700;
-  word-wrap: break-word;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.tags {
-  align-self: stretch;
+.search-type .frame-2 {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 8px;
-  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
 }
 
-.tag {
-  padding: 4px;
-  background: #4747eb;
-  border-radius: 8px;
-  color: #05052e;
+.search-type .rectangle-2 {
+  width: 2px;
+  height: 14px;
+  background-color: #9747ff;
+}
+
+.search-type .g-nero {
   font-size: 14px;
-  font-family: "Roboto", sans-serif;
   font-weight: 500;
-  word-wrap: break-word;
 }
 
-.gamesBox {
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  justify-items: center;
-  grid-gap: 10px;
+.search-type .title .t-tulo {
+  color: #9747ff;
 }
 
-.gameCard {
-  display: grid;
-  justify-content: center;
-  justify-items: center;
-  background: #05052e;
-  box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.25);
-  border-radius: 24px;
+.search-type .genre .t-tulo {
+  color: #ffffff;
 }
 
-.gameCard img {
-  width: 100%;
-  height: auto;
-  max-width: 300px;
-  max-height: 192px;
-  box-shadow: 0px -8px 8px rgba(0, 0, 0, 0.25) inset;
-  border-top-left-radius: 24px;
-  border-top-right-radius: 24px;
-}
-.navBar {
-  display: flex;
-  justify-content: center;
-  justify-items: center;
-  height: 15vh;
-  width: 100vw;
-  padding-bottom: 20px;
-  background: linear-gradient(#1a1a22, #1a1a22, #121223, #121223);
-}
-.searchForm {
-  display: grid;
-  align-items: center;
-  justify-items: center;
-}
-.input {
-  border: none;
-  background-color: #1a1a2a;
-  width: 210%;
-  height: 3vh;
-  border: #4747eb solid 1px;
-  border-radius: 100px;
-  color: white;
-}
-.inputText {
-  border: none;
-  background-color: #1a1a2a;
-  color: white;
-  border-radius: 100px;
-  width: 88%;
-  height: 100%;
-}
-.inputText:focus {
-  outline: none;
-}
-.submitButton {
-  border: none;
-  background-color: #1a1a2a;
-  color: white;
-}
-.radios {
-  display: grid;
-  align-items: center;
-  justify-items: center;
-  justify-content: center;
-  grid-template-columns: 70% 70%;
-}
-.game {
-  display: grid;
-  align-items: center;
-  justify-items: center;
-  justify-content: center;
-}
-@media screen and (min-width: 1024px) {
-  .gamesBox {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-gap: 30px;
-  }
-
-  .gameCard {
-    width: 300px;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .gameCard img {
-    width: 100%;
-    height: auto;
-    box-shadow: 0px -8px 8px rgba(0, 0, 0, 0.25) inset;
-    border-top-left-radius: 24px;
-    border-top-right-radius: 24px;
-    object-fit: cover; /* Adicionei esta propriedade para ajustar o comportamento da imagem */
-  }
-
-  .content {
-    height: 100%;
-  }
-
-  .title,
-  .subtitle,
-  .date,
-  .tags {
-    margin-top: 8px;
-    flex: 1;
-  }
+.search-type .genre .rectangle {
+  opacity: 0;
 }
 
-/* Tablet */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  .gamesBox {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-gap: 20px;
-    margin-top: 10px;
-  }
-
-  .gameCard {
-    max-width: 288px;
-    max-height: 384px;
-  }
-
-  .gameCard img {
-    height: 150px;
-  }
+.search-type .title .rectangle-2 {
+  opacity: 0;
 }
 
-/* Mobile */
-@media screen and (max-width: 767px) {
-  .gamesBox {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
+.search-type .genre .g-nero {
+  color: #ffffff;
+}
 
-  .gameCard {
-    width: 100%;
-    height: auto;
-    max-width: 220px;
-    max-height: 320px; /* Aumentei a altura para melhor legibilidade */
-  }
-
-  .gameCard img {
-    width: 100%;
-    height: auto;
-    box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.25) inset;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-  }
-
-  .title {
-    font-size: 16px; /* Reduzi um pouco o tamanho da fonte */
-    white-space: normal;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .subtitle {
-    font-size: 12px;
-    white-space: normal;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+.search-type .title .g-nero {
+  color: #9747ff;
 }

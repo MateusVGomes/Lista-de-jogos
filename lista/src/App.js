@@ -1,4 +1,7 @@
 import "./App.css";
+import "./styles/Game.css"
+import "./styles/Navbar.css";
+import "./styles/Loader.css";
 import { useState, useEffect } from "react";
 import GameList from "./components/GameList";
 import Navbar from "./components/Navbar";

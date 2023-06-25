@@ -1,0 +1,47 @@
+.navBar {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    height: 15vh;
+    width: 100vw;
+    margin-bottom: 20px;
+    background: #221F27;
+    
+  }
+  .searchForm {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+  }
+  .input {
+    border: none;
+    background-color: #1a1a2a;
+    width: 210%;
+    height: 3vh;
+    border: #4747eb solid 1px;
+    border-radius: 100px;
+    color: white;
+  }
+  .inputText {
+    border: none;
+    background-color: #1a1a2a;
+    color: white;
+    border-radius: 100px;
+    width: 88%;
+    height: 100%;
+  }
+  .inputText:focus {
+    outline: none;
+  }
+  .submitButton {
+    border: none;
+    background-color: #1a1a2a;
+    color: white;
+  }
+  .radios {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    grid-template-columns: 70% 70%;
+  }
