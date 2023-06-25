@@ -1,15 +1,13 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
-import Game from "./components/Game";
 import GameList from "./components/GameList";
-import Pesquisa from "./components/Pesquisa";
+import Navbar from "./components/Navbar";
 import axios from "axios";
 
 function App() {
-  const [completeGameList,setCompleteGameList]=useState([])
+  const [completeGameList, setCompleteGameList] = useState([]);
   const [gameList, setGameList] = useState([]);
   const [error, setError] = useState("");
-
   useEffect(() => {
     let isMounted = true;
     const fetchData = async () => {
@@ -59,9 +57,7 @@ function App() {
         }
       }
     };
-
     fetchData();
-
     return () => {
       isMounted = false;
     };
@@ -69,20 +65,20 @@ function App() {
   const updateGameList = (newGameList) => {
     setGameList(newGameList);
   };
-
   return (
     <div className="App">
       {error ? (
-        <p>{error}</p>
+        <h1>{error}</h1>
       ) : (
         <div>
-          {" "}
-          <Pesquisa compleGameList={completeGameList} gameList={gameList} updateGameList={updateGameList}  />
-          <GameList gameList={gameList} className="gamesBox"/>
+          <Navbar
+            completeGameList={completeGameList}
+            updateGameList={updateGameList}
+          />
+          <GameList gameList={gameList} className="gamesBox" />
         </div>
       )}
     </div>
   );
 }
-
 export default App;

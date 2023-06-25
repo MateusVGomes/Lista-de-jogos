@@ -6,9 +6,9 @@
 
 body {
   background-color: #121223;
-  color: gray;
+  color: white;
+  overflow-x: hidden; 
 }
-
 .content {
   width: 100%;
   max-width: 288px;
@@ -26,7 +26,7 @@ body {
   align-self: stretch;
   color: white;
   font-size: 24px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 900;
   word-wrap: break-word;
   white-space: nowrap;
@@ -36,9 +36,9 @@ body {
 
 .subtitle {
   align-self: stretch;
-  color: #A3A3F5;
+  color: #a3a3f5;
   font-size: 14px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
   word-wrap: break-word;
   white-space: nowrap;
@@ -50,7 +50,7 @@ body {
   align-self: stretch;
   color: white;
   font-size: 12px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 700;
   word-wrap: break-word;
   white-space: nowrap;
@@ -69,11 +69,11 @@ body {
 
 .tag {
   padding: 4px;
-  background: #4747EB;
+  background: #4747eb;
   border-radius: 8px;
-  color: #05052E;
+  color: #05052e;
   font-size: 14px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
   word-wrap: break-word;
 }
@@ -104,7 +104,58 @@ body {
   border-top-left-radius: 24px;
   border-top-right-radius: 24px;
 }
-
+.navBar {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  height: 15vh;
+  width: 100vw;
+  padding-bottom: 20px;
+  background: linear-gradient(#1a1a22, #1a1a22, #121223, #121223);
+}
+.searchForm{
+  display:grid;
+  align-items: center;
+  justify-items: center;
+}
+.input {
+  border: none;
+  background-color:#1A1A2A;
+  width: 210%;
+  height: 3vh;
+  border: #4747eb solid 1px;
+  border-radius: 100px;
+  color:white;
+}
+.inputText{
+  border:none;
+  background-color:#1A1A2A;
+  color:white;
+  border-radius: 100px;
+  width:88%;
+  height: 100%;
+}
+.inputText:focus {
+  outline: none;
+}
+.submitButton{
+  border:none;
+  background-color:#1A1A2A;
+  color:white;
+}
+.radios{
+  display:grid;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  grid-template-columns: 70% 70%;
+}
+.game{
+  display:grid;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+}
 @media screen and (min-width: 1024px) {
   .gamesBox {
     grid-template-columns: repeat(3, minmax(0, 1fr));
