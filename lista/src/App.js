@@ -10,6 +10,7 @@ function App() {
   const [completeGameList, setCompleteGameList] = useState([]);
   const [gameList, setGameList] = useState([]);
   const [error, setError] = useState("");
+  const [isLoading,setIsLoading]=useState(true);
   useEffect(() => {
     let isMounted = true;
     const fetchData = async () => {
@@ -29,6 +30,7 @@ function App() {
         if (isMounted) {
           setGameList(newData);
           setCompleteGameList(newData);
+          setIsLoading(false);
         }
       } catch (error) {
         if (!error.response && error.code !== "ECONNABORTED") {
@@ -62,10 +64,12 @@ function App() {
   };
   return (
     <div className="App">
+      
       {error ? (
         <Error error={error} />
       ) : (
         <div>
+          <Loader isLoading={isLoading} />
           <Navbar
             completeGameList={completeGameList}
             updateGameList={updateGameList}
