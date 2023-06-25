@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import { useState} from "react";
 
 function Pesquisa(props) {
   const [searchDecision, setSearchDecision] = useState("title");
   const [searchInput, setSearchInput] = useState("");
-  const gameList = props.gameList;
+
+  const gameList = props.compleGameList;
   let   searchGameResult=[];
   const handleSearchDecision = (event) => {
     setSearchDecision(event.target.value);
@@ -30,7 +31,6 @@ else{
         );
       });
 }
-console.log(searchGameResult)
 props.updateGameList(searchGameResult);  
 };
   return (

@@ -1,12 +1,12 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import Game from "./components/Game";
-import Function from "./components/Function";
-import Pesquisa from "./components/Pesquisa"
+import GameList from "./components/GameList";
+import Pesquisa from "./components/Pesquisa";
 import axios from "axios";
 
 function App() {
-  const [firstGame, setFirstGame] = useState("");
+  const [completeGameList,setCompleteGameList]=useState([])
   const [gameList, setGameList] = useState([]);
   const [error, setError] = useState("");
 
@@ -25,11 +25,10 @@ function App() {
           }
         );
         const data = response.data;
-        let firstGame = data[0];
         let newData = data;
         if (isMounted) {
-          setFirstGame(firstGame);
           setGameList(newData);
+          setCompleteGameList(newData);
         }
       } catch (error) {
         if (error.response) {
@@ -43,7 +42,9 @@ function App() {
             statusCode === 508 ||
             statusCode === 509
           ) {
-            setError("O servidor falhou em responder, tente recarregar a página");
+            setError(
+              "O servidor falhou em responder, tente recarregar a página"
+            );
           } else {
             setError(
               "O servidor não conseguirá responder por agora, tente voltar novamente mais tarde"
@@ -65,24 +66,24 @@ function App() {
       isMounted = false;
     };
   }, []);
-       const updateGameList=(newGameList)=>{
-           setGameList(newGameList);
-       }
-
+  const updateGameList = (newGameList) => {
+    setGameList(newGameList);
+  };
 
   return (
     <div className="App">
       {error ? (
         <p>{error}</p>
       ) : (
-        
-        <div>  <Pesquisa gameList={gameList} updateGameList={updateGameList} />
-        <div className='gamesBox'>
-          {gameList.map(game=>{
-                return <Game firstGame={game} />
-          })}
-    
-        </div>
+        <div>
+          {" "}
+          <Pesquisa compleGameList={completeGameList} gameList={gameList} updateGameList={updateGameList}  />
+          
+          <div className="gamesBox">
+            {gameList.map((game) => {
+              return <Game gameList={game} />;
+            })}
+          </div>
         </div>
       )}
     </div>
