@@ -78,12 +78,7 @@ function App() {
         <div>
           {" "}
           <Pesquisa compleGameList={completeGameList} gameList={gameList} updateGameList={updateGameList}  />
-          
-          <div className="gamesBox">
-            {gameList.map((game) => {
-              return <Game gameList={game} />;
-            })}
-          </div>
+          <GameList gameList={gameList} className="gamesBox"/>
         </div>
       )}
     </div>
