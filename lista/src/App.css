@@ -7,8 +7,26 @@
 body {
   background-color: #121223;
   color: white;
-  overflow-x: hidden; 
+  overflow-x: hidden;
 }
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+.loader{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #05052e;
+}
+
 .content {
   width: 100%;
   max-width: 288px;
@@ -113,45 +131,45 @@ body {
   padding-bottom: 20px;
   background: linear-gradient(#1a1a22, #1a1a22, #121223, #121223);
 }
-.searchForm{
-  display:grid;
+.searchForm {
+  display: grid;
   align-items: center;
   justify-items: center;
 }
 .input {
   border: none;
-  background-color:#1A1A2A;
+  background-color: #1a1a2a;
   width: 210%;
   height: 3vh;
   border: #4747eb solid 1px;
   border-radius: 100px;
-  color:white;
+  color: white;
 }
-.inputText{
-  border:none;
-  background-color:#1A1A2A;
-  color:white;
+.inputText {
+  border: none;
+  background-color: #1a1a2a;
+  color: white;
   border-radius: 100px;
-  width:88%;
+  width: 88%;
   height: 100%;
 }
 .inputText:focus {
   outline: none;
 }
-.submitButton{
-  border:none;
-  background-color:#1A1A2A;
-  color:white;
+.submitButton {
+  border: none;
+  background-color: #1a1a2a;
+  color: white;
 }
-.radios{
-  display:grid;
+.radios {
+  display: grid;
   align-items: center;
   justify-items: center;
   justify-content: center;
   grid-template-columns: 70% 70%;
 }
-.game{
-  display:grid;
+.game {
+  display: grid;
   align-items: center;
   justify-items: center;
   justify-content: center;

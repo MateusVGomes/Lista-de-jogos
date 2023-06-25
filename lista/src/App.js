@@ -1,7 +1,9 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import GameList from "./components/GameList";
 import Navbar from "./components/Navbar";
+import Loader from "./components/Loader";
+import Error from "./components/Error";
 import axios from "axios";
 
 function App() {
@@ -29,32 +31,25 @@ function App() {
           setCompleteGameList(newData);
         }
       } catch (error) {
-        if (error.response) {
-          const statusCode = error.response.status;
-          if (
-            statusCode === 500 ||
-            statusCode === 502 ||
-            statusCode === 503 ||
-            statusCode === 504 ||
-            statusCode === 507 ||
-            statusCode === 508 ||
-            statusCode === 509
-          ) {
-            setError(
-              "O servidor falhou em responder, tente recarregar a página"
-            );
-          } else {
-            setError(
-              "O servidor não conseguirá responder por agora, tente voltar novamente mais tarde"
-            );
-          }
-        } else if (error.code === "ECONNABORTED") {
-          setError("O servidor demorou para responder, tente mais tarde");
-        } else {
+        if (!error.response && error.code !== "ECONNABORTED") {
           setError(
             "Ocorreu um erro ao se comunicar com o servidor, tente novamente mais tarde"
           );
+          return;
         }
+        if (!error.response && error.code === "ECONNABORTED") {
+          setError("O servidor demorou para responder, tente mais tarde");
+          return;
+        }
+        const { status } = error.response;
+        if ([500, 502, 503, 504, 507, 508, 509].includes(status)) {
+          setError("O servidor falhou em responder, tente recarregar a página");
+          return;
+        }
+        setError(
+          "O servidor não conseguirá responder por agora, tente voltar novamente mais tarde"
+        );
+        return;
       }
     };
     fetchData();
@@ -68,7 +63,7 @@ function App() {
   return (
     <div className="App">
       {error ? (
-        <h1>{error}</h1>
+        <Error error={error} />
       ) : (
         <div>
           <Navbar
