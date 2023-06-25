@@ -10,7 +10,7 @@ function App() {
   const [completeGameList, setCompleteGameList] = useState([]);
   const [gameList, setGameList] = useState([]);
   const [error, setError] = useState("");
-  const [isLoading,setIsLoading]=useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     let isMounted = true;
     const fetchData = async () => {
@@ -64,12 +64,14 @@ function App() {
   };
   return (
     <div className="App">
-      
       {error ? (
         <Error error={error} />
-      ) : (
+      ) : isLoading ? (
         <div>
           <Loader isLoading={isLoading} />
+        </div>
+      ) : (
+        <div>
           <Navbar
             completeGameList={completeGameList}
             updateGameList={updateGameList}
