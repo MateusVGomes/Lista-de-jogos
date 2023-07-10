@@ -31,6 +31,7 @@ function App() {
         const data = response.data;
         let newData = data;
         if (isMounted) {
+          console.log(newData);
           setGameList(newData);
           setCompleteGameList(newData);
           setIsLoading(false);
